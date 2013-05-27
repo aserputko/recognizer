@@ -11,6 +11,72 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20130516224708) do
+
+  create_table "addresses", :force => true do |t|
+    t.integer  "uid"
+    t.string   "address1"
+    t.string   "city"
+    t.string   "postcode"
+    t.string   "country"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "sdn_id"
+  end
+
+  create_table "akas", :force => true do |t|
+    t.integer  "uid"
+    t.string   "aka_type"
+    t.string   "category"
+    t.string   "last_name"
+    t.string   "first_name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "sdn_id"
+  end
+
+  create_table "date_of_births", :force => true do |t|
+    t.boolean  "main_entry"
+    t.integer  "uid"
+    t.string   "date"
+    t.integer  "sdn_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "nationalities", :force => true do |t|
+    t.integer  "sdn_id"
+    t.integer  "uid"
+    t.string   "country"
+    t.boolean  "main_entry"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "place_of_births", :force => true do |t|
+    t.boolean  "main_entry"
+    t.integer  "uid"
+    t.string   "place"
+    t.integer  "sdn_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "programs", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "sdn_id"
+  end
+
+  create_table "sdns", :force => true do |t|
+    t.integer  "uid"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "sdn_type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.text     "remarks"
+  end
 
 end
